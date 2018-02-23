@@ -32,16 +32,3 @@
         echo '[0,';
         echo json_encode($words,JSON_UNESCAPED_UNICODE).']';
 	?>
-    <?php
-     /**
-    * 不转义中文字符的 json 编码
-    * @param array $arr 待编码数组
-    * @return string
-    */
-    function json($arr) {
-        $str = json_encode($arr);
-        $search = "#\\\u([0-9a-f]+)#ie";
-        $replace = "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))";
-        return preg_replace($search, $replace, $str);
-    }
-?>
