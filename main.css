@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #f9fafc;
+}
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tg td {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    word-break: normal;
+}
+.tg th {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    word-break: normal;
+}
+.tg .tg-s6z2 {
+    text-align: center
+}
+.tg .tg-baqh {
+    text-align: center;
+    vertical-align: center;
+}
+header {
+    z-index: 100;
+    position: fixed;
+    box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+header form,
+input {
+    float: left;
+    opacity: 0.7;
+}
+header form {
+    position: relative;
+}
+header button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0.7;
+}
+header form input {
+    height: 40px;
+    width: 400px;
+    padding: 0 3px;
+    font-size: 30px;
+    line-height: 40px;
+    border: 2px solid #a9c4ee;
+    box-sizing: border-box;
+}
+header form input:focus {
+    border: 2px solid purple;
+}
+header form input:focus+button {
+    background-color: #af9ed4;
+    border: 2px solid #af9ed4;
+}
+header button {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #a9c4ee;
+    background-color: #a9c4ee;
+    padding: 0;
+}
+section {
+    margin-top: 50px;
+    position: relative;
+}
+
+/*waterfall*/
+
+.waterfall-main {
+    width: 1152px;
+    min-height: 800px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    position: relative;
+}
+.card {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 15px 0px;
+    width: 90%;
+    min-height: 100px;
+    box-sizing: border-box;
+    background: #d7dff591;
+    box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .05);
+    border-radius: 8px;
+    transition: all .3s;
+    margin: 10% 5%;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .1);
+}
+.card table {
+    margin: 0 auto;
+}
+article {
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    padding: 15px 0px;
+    min-height: 100px;
+    box-sizing: border-box;
+    background: #d7dff5;
+    box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.17);
+    border-radius: 8px;
+    transition: all .3s;
+    max-height: 700px;
+    overflow: scroll;
+}
+#table_search {
+    margin: 0 auto;
+    opacity: 0.7 border-collapse: collapse;
+}
+#table_search tr {
+    border-style: none none dotted none;
+    border-width: 1px;
+}
+#table_search tbody:first-of-type tr {
+    border-style: none none double none;
+    border-width: 2px;
+}
+#table_search tbody:last-of-type tr {
+    border-style: none none solid none;
+}
+#table_search th {
+    font-size: 14px;
+}
+#table_search td,
+#table_search th {
+    font-size: 12px;
+    padding: 4px 3px;
+    border-style: none;
+    overflow: auto;
+    word-break: normal;
+}
+#X {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0px;
+    top:0px;
+    border-radius: 24px;
+    background: transparent;
+}
+#X span{
+    background: #6e94fc;
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 7px;
+    top:7px;
+    border-radius: 10px;  
+}
+
+
+@media screen and (max-width: 420px) {
+    header {
+        box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.2);
+    }
+    .tg td {
+        font-size: 14px;
+    }
+    .tg th {
+        font-size: 16px;
+    }
+}
