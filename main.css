@@ -38,7 +38,7 @@ body {
 header {
     z-index: 100;
     position: fixed;
-    box-shadow: 0 12px 24px 0 rgba(7, 17, 27, 0.2);
+    box-shadow: 0 5px 10px 0 rgba(7, 17, 27, 0.2);
     border-radius: 8px;
     width: 100%;
     top: 0px;
@@ -66,13 +66,10 @@ header form input {
     line-height: 40px;
     border: 2px solid #a9c4ee;
     box-sizing: border-box;
+    outline: none;
 }
 header form input:focus {
     border: 2px solid purple;
-}
-header form input:focus+button {
-    background-color: #af9ed4;
-    border: 2px solid #af9ed4;
 }
 header button {
     width: 40px;
@@ -81,6 +78,10 @@ header button {
     border: 2px solid #a9c4ee;
     background-color: #a9c4ee;
     padding: 0;
+}
+header form input:focus+button {
+    background-color: #af9ed4;
+    border: 2px solid #af9ed4;
 }
 section {
     margin-top: 50px;
