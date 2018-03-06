@@ -51,6 +51,7 @@ input {
 }
 header form {
     position: relative;
+    width: 100%;
 }
 header button {
     position: absolute;
@@ -60,7 +61,7 @@ header button {
 }
 header form input {
     height: 40px;
-    width: 400px;
+    width: 100%;
     padding: 0 3px;
     font-size: 30px;
     line-height: 40px;
@@ -72,7 +73,7 @@ header form input:focus {
     border: 2px solid purple;
 }
 header button {
-    width: 40px;
+    width: 10%;
     height: 40px;
     box-sizing: border-box;
     border: 2px solid #a9c4ee;
@@ -86,17 +87,9 @@ header form input:focus+button {
 section {
     margin-top: 50px;
     position: relative;
+    width: 100%;
 }
 
-/*waterfall*/
-
-.waterfall-main {
-    width: 1152px;
-    min-height: 800px;
-    margin-top: 24px;
-    margin-bottom: 48px;
-    position: relative;
-}
 .card {
     position: relative;
     top: 0;
@@ -105,7 +98,7 @@ section {
     width: 90%;
     min-height: 100px;
     box-sizing: border-box;
-    background: #d7dff591;
+    background: #d7dff5;
     box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .05);
     border-radius: 8px;
     transition: all .3s;
@@ -120,7 +113,7 @@ section {
 article {
     display: block;
     position: absolute;
-    top: 10%;
+    top: 55px;
     left: 5%;
     width: 90%;
     padding: 15px 0px;
@@ -131,7 +124,7 @@ article {
     border-radius: 8px;
     transition: all .3s;
     max-height: 700px;
-    overflow: scroll;
+    overflow: auto;
 }
 #table_search {
     margin: 0 auto;
@@ -186,7 +179,10 @@ article {
         box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.2);
     }
     .tg td {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    #tablebox .card:last-of-type td{
+        padding: 10px 0;
     }
     .tg th {
         font-size: 16px;

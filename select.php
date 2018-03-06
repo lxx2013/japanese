@@ -6,24 +6,29 @@
 		$user = 'root';
 		$pass = '';
 		$link=mysqli_connect($host,$user,$pass) or die('Could not connect: ' . mysql_error());
-		mysqli_query($link,"set names 'utf8'");
+		mysqli_query($link,"set character set 'utf8'");
+		//mysqli_query($link,"set names 'utf8'");
         mysqli_query($link,"use japanese;");
         
         $words=array();
         $i=0;
         
-        foreach($_POST['ends'] as $k=>$v){
-            $sql = "select * from dict where classnum =".$_POST['classnum']." and end in('".$v."')";
+            $sql = "select * from dict where classnum=".$_POST['inputs'];
+            //echo $sql;
             $result=mysqli_query($link,$sql);
                 if ($result->num_rows > 0) {
                 // 输出每行数据
                 while($row = $result->fetch_assoc()) {
                     $words[$i]=$row;
+			//var_dump($row);
+			//echo json($row);
+			//echo PHP_EOL;
+			//echo json_encode($row,JSON_UNESCAPED_UNICODE);
+			//echo PHP_EOL;
                     $i++;
                 }
 		      } 
-        }
-        echo '['.$_POST['index'].',';
+        
+        echo '[0,';
         echo json_encode($words,JSON_UNESCAPED_UNICODE).']';
 	?>
-   

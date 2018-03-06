@@ -160,48 +160,32 @@
     var count = 1;
 
     function select_class(input_classnum) {
-        console.log('function counts: ' + count++ + '\n');
-        var lists = [
-            ['い', 'ち', 'り'],
-            ['み', 'ひ', 'び', 'に'],
-            ['き', 'ぎ', 'え'],
-            ['れ', 'へ', 'べ', 'け', 'げ'],
-            ['し', 'じ']
-        ];
-        $('#tablebox').html(" ");
-        for (index in lists) {
-            //console.log(lists[index]);
-            draw_a_table(lists[index], index);
-
-
-            $.ajax({
-                type: 'post',
-                url: 'select.php',
-                data: {
-                    classnum: input_classnum,
-                    ends: lists[index],
-                    index: index
-                },
-                success: function(data) {
-                    //document.write(data);
-                    console.log(data);
-                    var words = $.parseJSON(data);
-                    var index = words[0];
-                    words = words[1];
-                    //                    console.log('index:'+index+'\nwords:'+words);
-                    for (var i in words) {
-                        var m, n;
-                        var start = words[i].start;
-                        var k = pingjias.indexOf(start);
-                        //console.log(k);
-                        m = Math.floor(k / 5) + 1; // num of row;
-                        n = k % 5; // num of column;
-                        var $out = $('#table' + index).find('tr:eq(' + m + ')').find('td:eq(' + n + ')');
-                        $out.html(($out.html() ? $out.html() + '<br/>' : '') + words[i].word);
-                    }
+        $('#table_search').html('<tr>\
+                <th class="tg-s6z2">単語</th>\
+                <th class="tg-s6z2">発音</th>\
+                <th class="tg-s6z2">意味</th>\
+                <th class="tg-s6z2">課</th>\
+            </tr>');
+        
+        $.ajax({
+            type: 'post',
+            url: 'select.php',
+            data: {
+                inputs: input_classnum
+            },
+            success: function(data) {
+                //document.write(data);
+                console.log(data);
+                var words = $.parseJSON(data);
+                var index = words[0];
+                words = words[1];
+                //                    console.log('index:'+index+'\nwords:'+words);
+                for (var i in words) {
+                    $('#table_search').html($('#table_search').html() + '<tr><td class="tg-baqh">' + words[i].word + '</td><td class="tg-baqh">' + words[i].pron + '</td><td class="tg-baqh">' + words[i].mean + '</td><td class="tg-baqh">' + words[i].classnum + '</td></tr>')
                 }
-            });
-        }
+                $('article').css('display','table');
+            }
+        });
 
     }
 
@@ -338,10 +322,10 @@
 
     var documentWidth = $(window).width();
     $(document).ready(function() {
-        $('header').css('width', documentWidth);
-        $('input').css('width', documentWidth);
-        $('button').css('width', documentWidth * 0.1);
-        $('section').css('width', documentWidth);
+//        $('header').css('width', documentWidth);
+//        $('input').css('width', documentWidth);
+//        $('button').css('width', documentWidth * 0.1);
+//        $('section').css('width', documentWidth);
         
         $('#X').click(function(){
             $('article').css('display','none');
@@ -353,7 +337,16 @@
             </tr>');
         });
     });
-
+    $(document).delegate('td','click',function(){
+        console.log($(this).html());
+        console.log(this);
+        console.log({
+            position:$(this).position,
+            offset:$(this).offset(),
+            width:$(this).width(),
+            height:$(this).height()
+        })
+    })
 </script>
 
 </html>
