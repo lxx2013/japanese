@@ -11,7 +11,11 @@ body {
     position: absolute;
     bottom: 0px;
     left:50%;
-    margin-left: -150px;
+    margin-left: -126px;
+    opacity: 0.5;
+}
+#beian img{
+    opacity: 0.8;
 }
 .tg {
     border-collapse: collapse;
