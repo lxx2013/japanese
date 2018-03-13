@@ -4,6 +4,14 @@
 }
 body {
     background: #f9fafc;
+    position: relative;
+    min-height: 800px;
+}
+#beian{
+    position: absolute;
+    bottom: 0px;
+    left:50%;
+    margin-left: -150px;
 }
 .tg {
     border-collapse: collapse;
@@ -88,6 +96,7 @@ section {
     margin-top: 50px;
     position: relative;
     width: 100%;
+    padding-bottom: 100px;
 }
 
 .card {
